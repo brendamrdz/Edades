@@ -29,6 +29,7 @@ public class Edades {
        edadesArrayList.add(15);
        mostrarElementos();
        promedioEdades();
+    ordenarElementos();
     }
 
     public void mostrarElementos(){
@@ -53,6 +54,22 @@ public class Edades {
         for(int i=0;i<15; i++){
             System.out.print(edadesArrayList.get(i) + ", ");
         }
+    }
+    public void ordenarElementos(){
+
+        for (int i = 0; i < edadesArrayList.size(); i++) {
+        for (int j = 0; j < edadesArrayList.size()-i-1; j++) {
+            if(edadesArrayList.get(j) > edadesArrayList.get(j+1)){
+                int tmp = edadesArrayList.get(j+1);
+                edadesArrayList.set(j+1,edadesArrayList.get(j));
+                edadesArrayList.set(j,tmp);
+            }
+            
+        } 
+    }
+    for(int x = 0; x < edadesArrayList.size(); x++){
+        System.out.println(edadesArrayList.get(x));
+    }
     }
 }
 
