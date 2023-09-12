@@ -7,7 +7,7 @@ public class Edades {
     public static void main(String[] args) throws Exception {
         Edades nuevasEdades = new Edades();
         nuevasEdades.agregarElementos();
-       //nuevasEdades.eliminarElementos(1);
+       
 
     }
     
@@ -18,6 +18,7 @@ public class Edades {
        edadesArrayList.add(4);
        edadesArrayList.add(5);
        edadesArrayList.add(6);
+       edadesArrayList.add(30);
        edadesArrayList.add(7);
        edadesArrayList.add(8);
        edadesArrayList.add(9);
@@ -29,33 +30,43 @@ public class Edades {
        edadesArrayList.add(15);
        mostrarElementos();
        promedioEdades();
-    ordenarElementos();
+       eliminarElementos(30);
+        ordenarElementos()
+       
     }
 
     public void mostrarElementos(){
-        for(int i=0;i<14; i++){
+        for(int i=0;i<edadesArrayList.size(); i++){
             System.out.println("posición " + i + ", contiene el valor de edad :  " + edadesArrayList.get(i) + ".");
         }
     }
 
            
     public void promedioEdades(){
+    	
         int sumaEdades = 0;
         int prom = 0;
-        for(int i=0;i<15; i++){
+        for(int i=0;i<edadesArrayList.size(); i++){
             sumaEdades = sumaEdades + edadesArrayList.get(i);
         }
-        prom = sumaEdades/15;
+        prom = sumaEdades/edadesArrayList.size();
         System.out.println("El promedio es:" + prom);
      }
        
     public void eliminarElementos(int eliminarEdad){
-       edadesArrayList.remove(eliminarEdad);
-        for(int i=0;i<15; i++){
+       //edadesArrayList.remove(eliminarEdad);
+       int ed = edadesArrayList.get(7);
+       System.out.println(ed);
+       
+       int et = edadesArrayList.indexOf(eliminarEdad);
+       System.out.println(et);
+       
+       edadesArrayList.remove(et);
+        for(int i=0;i<edadesArrayList.size(); i++){
             System.out.print(edadesArrayList.get(i) + ", ");
         }
     }
-    public void ordenarElementos(){
+     public void ordenarElementos(){
 
         for (int i = 0; i < edadesArrayList.size(); i++) {
         for (int j = 0; j < edadesArrayList.size()-i-1; j++) {
